@@ -11,13 +11,10 @@ function handleSubmit(evt) {
 
   if (email.value === "" || password.value === "") {
     return alert("Всі поля повинні бути заповнені");
+  } else {
+    const formData = new FormData(evt.currentTarget);
+    const userData = Object.fromEntries(formData.entries());
+    console.log(userData);
   }
-
-  console.log(
-    `Email: ${email.value}, 
-     Password: ${password.value}
-     `
-  );
-
   evt.currentTarget.reset();
 }
